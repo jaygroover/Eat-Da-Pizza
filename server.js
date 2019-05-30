@@ -18,10 +18,10 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-var routes = require('./controllers/routes.js');
+var routes = require('./controllers/routes');
 app.use('/', routes);
 
-var PORT = 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, function(){
     console.log('server listening on:http://localhost:' + PORT);
 });

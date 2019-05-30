@@ -1,8 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const pizza = require('../models/pizza');
 
-router.get('/', function(req,res){
-    res.render('index');
-})
+router.get('/', function(req, res) {
+    pizza.all(function(pizza_data){
+        console.log(pizza_data);
+        res.render('index');
+
+    })
+});
 
 module.exports = router;
+// console.log(res.render)
