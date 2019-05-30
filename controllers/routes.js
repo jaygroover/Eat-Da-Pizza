@@ -5,7 +5,7 @@ const pizza = require('../models/pizza');
 router.get('/', function(req, res) {
     pizza.all(function(pizza_data){
         console.log(pizza_data);
-        res.render('index');
+        res.render('index',{pizza_data});
 
     })
 });
